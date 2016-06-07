@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>InAppBrowser.addEventListener Example</title>
+
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    // Wait for device API libraries to load
+    //
+	var ref = window.open('http://myfonetv.com', '_blank', 'location=yes');
+    document.addEventListener("deviceready", onDeviceReady, false);
+ ref.addEventListener('loadstop', function() {
+            //Page loaded! some code here..
+            ref.executeScript(
+                                    {code: "var evaluateFeedback =   function(){return 'Done';};"},
+                                    function(data) {
+
+                                        ref.document.body.innerHTML =   "<b>Hello, User!     </b>";
+
+                                    }
+                                );
+        }); 
+
+    </script>
+  </head>
+  <body>
+  <img src="images/gear.gif" width="400" height="300">
+  </body>
+</html>

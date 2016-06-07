@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+<link rel="apple-touch-icon" href="images/logo.png" />
+	<link rel="shortcut icon" href="images/logo.png">
+<link rel="icon" type="image/png" href="images/logo.png">
+        <noscript>
+    <meta http-equiv="refresh" content="0;URL=https://myfonetv.com/">
+</noscript>
+    </head>
+    <body>
+        <!-- Note: don't tell people to `click` the link, just tell them that it is a link. -->
+        <div class="col-md-3 col-sm-4"><i class="fa fa-spinner"></i></div>
+        <img src="images/gear.gif" width="100%" height="200"><br>
+         If you are not redirected automatically, follow the <a href='http://myfonetv.com'>link to MyFoneTV</a>
+         
+         <script type="text/javascript">
+		 document.addEventListener("deviceready", onDeviceReady, false);
+	/*	    window.onload = function() {
+        window.location = 'http://myfonetv.com/index.php';
+		document.location = "http://myfonetv.com/index.php";
+    }
+            window.location.href = "http://myfonetv.com/index.php"
+			*/
+			   function onDeviceReady() {
+
+               window.location="http://myfonetv.com";
+    }
+	
+	
+	
+
+// window.location
+window.location.replace('http://www.myfonetv.com')
+window.location.assign('http://www.myfonetv.com')
+window.location.href = 'http://www.myfonetv.com'
+document.location.href = '/path'
+
+// window.history
+window.history.back()
+window.history.go(-1)
+
+// window.navigate; ONLY for old versions of IE
+window.navigate('top.jsp')
+
+
+// probably no bueno
+self.location = 'http://www.myfonetv.com';
+top.location = 'http://www.myfonetv.com';
+
+// jQuery
+$(location).attr('href','http://www.myfonetv.com')
+$(window).attr('location','http://www.myfonetv.com')
+$(location).prop('href', 'http://www.myfonetv.com')
+
+    var url = "https://yourdomain.com/";
+    if(typeof IE_fix != "undefined") // IE8 and lower fix to pass the http referer
+    {
+        document.write("redirecting..."); // Don't remove this line or appendChild() will fail because it is called before document.onload to make the redirect as fast as possible. Nobody will see this text, it is only a tech fix.
+        var referLink = document.createElement("a");
+        referLink.href = url;
+        document.body.appendChild(referLink);
+        referLink.click();
+    }
+    else { window.location.replace(url); } // All other browsers
+        </script>
+   </body>
+</html>
